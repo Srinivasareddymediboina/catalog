@@ -1,0 +1,44 @@
+
+{% include 'nav.html' %}
+<div class="main">
+{% block content %}
+  <!-- {% for vr in vrs_cat %}
+    <a href="{{ url_for('showPerfumes',vrid=vr.id)}}">{{vr.name}}</a><br>
+    {% endfor %} -->
+    {% with messages = get_flashed_messages() %}
+	    {% if messages %}
+	        <div class="alert alert-success alert-dismissable animated fadeIn">
+	            {% for message in messages %}
+	            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	            <p class="h4"><strong>{{ message }}</strong></p>
+	            {% endfor %}
+	        </div>
+	    {% endif %}
+	{% endwith %}
+
+	<div class="text-center" style=" margin-left: 100px">
+		<img class="mySlides" src="https://tawakkalperfumes.co.uk/ekmps/shops/5fee80/images/feelings-eau-de-perfume-60ml-413-1-p.jpg" style="display:none; width: 750px; height: 400px; margin: 0; padding: 0; margin-top: 50px;">
+    <img class="mySlides" src="https://www.branddose.com/wp-content/uploads/2018/05/C_Users_admin_AppData_Local_Packages_Microsoft.SkypeApp_kzf8qxf38zg5c_LocalState_38b24045-6bd5-46dd-9d2a-14be7a39fdb7-1.png" style="display:none; width: 750px; height: 400px; margin: 0; padding: 0; margin-top: 50px">
+    <img class="mySlides" src="https://5.imimg.com/data5/IH/RX/MY-50716692/bottega-veneta-mens-perfume-250x250.jpg" style="display:none; width: 750px; height: 400px; margin: 0; padding: 0; margin-top: 50px">
+    <img class="mySlides" src="https://s2.r29static.com//bin/entry/4d5/x,80/2097140/image.jpg" style="display:none; width: 750px; height: 400px; margin: 0; padding: 0; margin-top: 50px">
+	</div>
+
+  <script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+  }
+  </script>
+
+{% endblock content %}
+</div>
